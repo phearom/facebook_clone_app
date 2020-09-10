@@ -1,3 +1,4 @@
+import 'package:facebook_clone_app/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,62 +6,31 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  final customColor = MaterialColor(
+    Colors.grey.shade50.value,
+    {
+      50: Colors.grey.shade50,
+      100: Colors.grey.shade100,
+      200: Colors.grey.shade200,
+      300: Colors.grey.shade300,
+      400: Colors.grey.shade400,
+      500: Colors.grey.shade500,
+      600: Colors.grey.shade600,
+      700: Colors.grey.shade700,
+      800: Colors.grey.shade800,
+      900: Colors.grey.shade900
+    },
+  );
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Facebook Clone App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: customColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      home: MainScreen(),
     );
   }
 }
