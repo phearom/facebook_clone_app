@@ -12,13 +12,6 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   bool _currentPage = false;
-  // var _pages = [
-  //   FbHomeScreen(),
-  //   VideoScreen(),
-  //   AccountScreen(),
-  //   PeopleScreen(),
-  //   AllCountriesPage(),
-  // ];
   var _icons = [Icons.home, Icons.live_tv, Icons.account_circle, Icons.people, Icons.settings];
   int _selectedIndex = 0;
 
