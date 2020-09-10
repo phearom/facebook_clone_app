@@ -22,7 +22,10 @@ class _MainScreenState extends State<MainScreen> {
 
   List<Widget> _pageLists() {
     var _pages = [
-      HomeScreen(currentPage: _currentPage, pageIndex: _selectedIndex),
+      HomeScreen(
+        currentPage: _currentPage,
+        pageIndex: _selectedIndex,
+      ),
       VideoScreen(),
       AccountScreen(),
       PeopleScreen(),
