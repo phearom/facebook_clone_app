@@ -1,4 +1,4 @@
-package com.example.facebook_clone_app
+package com.phearom.facebook_clone_app
 
 import io.flutter.embedding.android.FlutterActivity
 
