@@ -1,7 +1,11 @@
 import 'package:facebook_clone_app/widgets/comment_widget.dart';
 import 'package:facebook_clone_app/widgets/divider_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+
+import 'commetn_bottom_sheet_widget.dart';
 
 class PostListWidget extends StatelessWidget {
   final int postId;
@@ -166,27 +170,14 @@ class PostListWidget extends StatelessWidget {
               ),
               FlatButton.icon(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    PageRouteBuilder(
-                      opaque: false,
-                      pageBuilder: (context, animation, secondaryAnimation) {
-                        return CommentWidget(postId: postId + 1);
-                      },
-                      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                        // return Align(
-                        //   child: FadeTransition(
-                        //     opacity: animation,
-                        //     child: child,
-                        //   ),
-                        // );
-                        return SlideTransition(
-                          position: Tween<Offset>(
-                            begin: const Offset(0, 1),
-                            end: Offset.zero,
-                          ).animate(animation),
-                          child: child,
-                        );
-                      },
+                  //_openCommentPage(context);
+                  showMaterialModalBottomSheet(
+                    expand: false,
+                    context: context,
+                    backgroundColor: Colors.transparent,
+                    builder: (context, scrollController) => CommentBottomSheetWidget(
+                      postId: postId,
+                      scrollController: scrollController,
                     ),
                   );
                 },
@@ -205,4 +196,30 @@ class PostListWidget extends StatelessWidget {
       ],
     );
   }
+
+  void _openCommentPage(BuildContext context) {
+    Navigator.of(context).push(
+      PageRouteBuilder(
+        opaque: false,
+        pageBuilder: (context, animation, secondaryAnimation) {
+          return CommentWidget(postId: postId + 1);
+        },
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          // return SlideTransition(
+          //   position: Tween<Offset>(
+          //     begin: const Offset(0, 1),
+          //     end: Offset.zero,
+          //   ).animate(animation),
+          //   child: child,
+          // );
+          return FadeTransition(
+            opacity: animation,
+            child: child,
+          );
+        },
+      ),
+    );
+  }
 }
+
+

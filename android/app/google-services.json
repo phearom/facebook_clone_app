@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "587315588166",
+    "firebase_url": "https://face-detect-flutter-app.firebaseio.com",
+    "project_id": "face-detect-flutter-app",
+    "storage_bucket": "face-detect-flutter-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587315588166:android:98cc1ef7aea76f9a932e47",
+        "android_client_info": {
+          "package_name": "com.phearom.facebook_clone_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587315588166-apq1j5nhonrfdbs9gk2nob5su2te9h0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt5icMaJqk2RV4zcIgQ3qt8WrENUU8Ilg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587315588166-apq1j5nhonrfdbs9gk2nob5su2te9h0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

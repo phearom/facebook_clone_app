@@ -52,8 +52,10 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
         title: Text(
           "Facebook",
           style: TextStyle(
-            color: Colors.blue,
+            color: Color(0xFF1777F2),
             fontWeight: FontWeight.bold,
+            fontSize: 24,
+            letterSpacing: -1.2,
           ),
         ),
         automaticallyImplyLeading: false,
