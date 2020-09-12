@@ -1,4 +1,4 @@
-import 'package:facebook_clone_app/screens/main_screen.dart';
+import 'package:facebook_clone_app/screens/navbar_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: customColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MainScreen(),
+      home: NavbarScreen(),
     );
   }
 }

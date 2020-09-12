@@ -5,12 +5,12 @@ import 'package:facebook_clone_app/screens/setting_screen.dart';
 import 'package:facebook_clone_app/screens/video_screen.dart';
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatefulWidget {
+class NavbarScreen extends StatefulWidget {
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _NavbarScreenState createState() => _NavbarScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _NavbarScreenState extends State<NavbarScreen> {
   bool _currentPage = false;
   var _icons = [Icons.home, Icons.live_tv, Icons.account_circle, Icons.people, Icons.settings];
   int _selectedIndex = 0;
