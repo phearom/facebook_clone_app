@@ -4,6 +4,7 @@ import 'package:facebook_clone_app/screens/people_screen.dart';
 import 'package:facebook_clone_app/screens/setting_screen.dart';
 import 'package:facebook_clone_app/screens/video_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class NavbarScreen extends StatefulWidget {
   @override
@@ -12,7 +13,13 @@ class NavbarScreen extends StatefulWidget {
 
 class _NavbarScreenState extends State<NavbarScreen> {
   bool _currentPage = false;
-  var _icons = [Icons.home, Icons.live_tv, Icons.account_circle, Icons.people, Icons.settings];
+  var _icons = [
+    Icons.home,
+    Icons.live_tv,
+    Icons.account_circle,
+    Icons.people,
+    Icons.settings,
+  ];
   int _selectedIndex = 0;
 
   @override
@@ -43,59 +50,83 @@ class _NavbarScreenState extends State<NavbarScreen> {
         //   index: _selectedIndex,
         //   children: _pages,
         // ),
-        //appBar: AppBar(bottom: _tabBarMenu()),
+        appBar: _appBar(),
         body: TabBarView(
           physics: NeverScrollableScrollPhysics(),
           children: _pageLists().map((e) => e).toList(),
         ),
-        bottomNavigationBar: _tabBarMenu(),
+        //bottomNavigationBar: _tabBarMenu(),
       ),
     );
   }
 
+  Widget _appBar() {
+    if (_selectedIndex == 0) {
+      return AppBar(
+        title: Text(
+          "Facebook",
+          style: TextStyle(
+            color: Colors.blue,
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+          ),
+        ),
+        bottom: _tabBarMenu(),
+        actions: [
+          ButtonWidget(
+            icon: Icons.search,
+            onPressed: () => print('search'),
+          ),
+          ButtonWidget(
+            icon: MdiIcons.facebookMessenger,
+            onPressed: () => print('message'),
+          ),
+        ],
+      );
+    } else {
+      return AppBar(
+        flexibleSpace: SafeArea(
+          child: _tabBarMenu(),
+        ),
+      );
+    }
+  }
+
   Widget _tabBarMenu() {
-    return Container(
-      decoration: BoxDecoration(
+    return TabBar(
+      indicator: BoxDecoration(
         border: Border(
-          top: BorderSide(
-            width: 1,
-            color: Colors.grey,
+          bottom: BorderSide(
+            color: Colors.blue,
+            width: 2.0,
           ),
         ),
       ),
-      child: TabBar(
-        indicator: BoxDecoration(
-          border: Border(
-            top: BorderSide(
-              color: Colors.blue,
-              width: 2.0,
-            ),
-          ),
-        ),
-        labelPadding: EdgeInsets.all(10),
-        tabs: _icons
-            .asMap()
-            .entries
-            .map(
-              (e) => Icon(
+      labelPadding: EdgeInsets.all(12),
+      tabs: _icons
+          .asMap()
+          .entries
+          .map(
+            (e) => Center(
+              child: Icon(
                 _icons[e.key],
                 size: 30,
                 color: e.key == _selectedIndex ? Colors.blue : null,
               ),
-            )
-            .toList(),
-        onTap: (index) {
-          setState(() {
-            if (index == _selectedIndex) {
-              _currentPage = true;
-            } else {
-              _currentPage = false;
-            }
-            _selectedIndex = index;
-            print("nav $_currentPage");
-          });
-        },
-      ),
+            ),
+          )
+          .toList(),
+      onTap: (index) {
+        setState(() {
+          if (index == _selectedIndex) {
+            _currentPage = true;
+          } else {
+            _currentPage = false;
+          }
+          _selectedIndex = index;
+          print("nav $_currentPage");
+        });
+      },
     );
 
     //  BottomNavigationBar(

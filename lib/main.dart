@@ -1,7 +1,11 @@
 import 'package:facebook_clone_app/screens/navbar_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+  );
   runApp(MyApp());
 }
 

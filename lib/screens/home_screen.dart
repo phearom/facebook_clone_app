@@ -44,32 +44,32 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
     }
 
     return Scaffold(
-      appBar: AppBar(
-        //backgroundColor: Colors.transparent,
-        //elevation: 0.0,
-        //brightness: Brightness.light,
-        //backgroundColor: Colors.white,
-        title: Text(
-          "Facebook",
-          style: TextStyle(
-            color: Color(0xFF1777F2),
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-            letterSpacing: -1.2,
-          ),
-        ),
-        automaticallyImplyLeading: false,
-        actions: [
-          ButtonWidget(
-            icon: Icons.search,
-            onPressed: () => print('search'),
-          ),
-          ButtonWidget(
-            icon: MdiIcons.facebookMessenger,
-            onPressed: () => print('message'),
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   //backgroundColor: Colors.transparent,
+      //   //elevation: 0.0,
+      //   //brightness: Brightness.light,
+      //   //backgroundColor: Colors.white,
+      //   title: Text(
+      //     "Facebook",
+      //     style: TextStyle(
+      //       color: Color(0xFF1777F2),
+      //       fontWeight: FontWeight.bold,
+      //       fontSize: 24,
+      //       letterSpacing: -1.2,
+      //     ),
+      //   ),
+      //   automaticallyImplyLeading: false,
+      //   actions: [
+      //     ButtonWidget(
+      //       icon: Icons.search,
+      //       onPressed: () => print('search'),
+      //     ),
+      //     ButtonWidget(
+      //       icon: MdiIcons.facebookMessenger,
+      //       onPressed: () => print('message'),
+      //     ),
+      //   ],
+      // ),
       body: RefreshIndicator(
         onRefresh: () {
           Completer<Null> completer = new Completer<Null>();
