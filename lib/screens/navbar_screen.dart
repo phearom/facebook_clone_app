@@ -18,7 +18,7 @@ class _NavbarScreenState extends State<NavbarScreen> {
     Icons.live_tv,
     Icons.account_circle,
     Icons.people,
-    Icons.settings,
+    Icons.menu,
   ];
   int _selectedIndex = 0;
 
