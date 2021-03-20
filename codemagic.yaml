@@ -7,7 +7,7 @@ workflows:
     name: Example Workflow
     scripts:
       - name: Build for iOS 
-        script: flutter build ios
+        script: flutter build ipa
     publishing:
       email:
         recipients:
