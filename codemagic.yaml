@@ -6,8 +6,8 @@ workflows:
   example-workflow:
     name: Example Workflow
     scripts:
-      - name: Build for iOS 
-        script: flutter build ipa
+      - name: Build for Android
+        script: flutter build apk
     publishing:
       email:
         recipients:
